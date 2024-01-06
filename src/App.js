@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import GifImage from "./weatherstat.jpg"
 
 
@@ -13,7 +13,7 @@ function App() {
 
 
   
-  const Api_Key = "65a098f4bec64a05b21182651232212"
+  const Api_Key = "process.env.REACT_APP_API_KEY"
  
 
   async function fetchWeatherData (Api_Key, cityInput){
@@ -103,7 +103,7 @@ function App() {
         <h2 className="temp">{Math.floor(weatherData.current.temp_c)} &deg;C</h2>
         <h2 className="condition">{weatherData.current.condition.text}</h2>
         <p className="date">{toDate()} </p> </div> : null }  
-        </div>: <img style={{height:"340px"}} src={GifImage}/> }
+        </div>: <img style={{height:"340px"}} src={GifImage} alt='weatherpic'/> }
         </div>  
   )}
 
